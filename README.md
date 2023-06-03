@@ -22,7 +22,8 @@
 
 ## Features
 List the ready features here:
-- abc
+- Creating s3 bucket in AWS,
+- Creating S3 bucket connection with app,
 
 ## Screenshots
 ![Example screenshot](/app/static/func-diagram.png)
