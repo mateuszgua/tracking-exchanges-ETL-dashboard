@@ -42,10 +42,12 @@ def test_create_database(sql_server_connection):
     cursor.execute("IF @@TRANCOUNT > 0 ROLLBACK")
 
     sql_create = f"""IF NOT EXISTS(SELECT 1 FROM sys.databases WHERE name='TestDatabase')
-            CREATE DATABASE TestDatabase USE TestDatabase"""
+            CREATE DATABASE TestDatabase"""
     cursor.execute(sql_create)
     sql_server_connection.commit()
-
+    
+    cursor.execute("""USE TestDatabase""")
+    
     cursor.execute(
         """SELECT COUNT(*) FROM sys.databases WHERE name = 'TestDatabase'""")
     count = cursor.fetchone()[0]
