@@ -16,3 +16,10 @@ class Config:
     FILE_PATH_INDEX_INFO = 'data/source/indexInfo.csv'
     FILE_PATH_INDEX_PROCESSED = 'data/source/indexProcessed.csv'
 
+    DB_USERNAME = os.getenv('DB_USERNAME')
+    DB_USER_PASSWORD = os.getenv('DB_USER_PASSWORD')
+    DB_SERVER = os.getenv('DB_SERVER')
+    DB_NAME = os.getenv('DB_NAME')
+    DB_PORT = os.getenv('DB_PORT')
+    DB_NEW_NAME = os.getenv('DB_NEW_NAME')
+    DB_DRIVER = os.getenv('DB_DRIVER')
