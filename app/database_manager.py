@@ -61,12 +61,12 @@ class DatabaseManager:
                                 Id int NOT NULL,
                                 IndexText varchar(10) NOT NULL,
                                 Date date NOT NULL,
-                                OpenCourse NUMERIC(10,6),
-                                HighCourse NUMERIC(10,6),
-                                LowCourse NUMERIC(10,6),
-                                CloseCourse NUMERIC(10,6),
-                                Adj_CloseCourse NUMERIC(10,6),
-                                Volume int
+                                OpenCourse NUMERIC(20,6),
+                                HighCourse NUMERIC(20,6),
+                                LowCourse NUMERIC(20,6),
+                                CloseCourse NUMERIC(20,6),
+                                Adj_CloseCourse NUMERIC(20,6),
+                                Volume bigint
                                 )""")
                     self.cursor.execute(sql_create_table)
 
@@ -89,13 +89,13 @@ class DatabaseManager:
                                 Id int NOT NULL,
                                 IndexText varchar(10) NOT NULL,
                                 Date date NOT NULL,
-                                OpenCourse NUMERIC(10,6),
-                                HighCourse NUMERIC(10,6),
-                                LowCourse NUMERIC(10,6),
-                                CloseCourse NUMERIC(10,6),
-                                Adj_CloseCourse NUMERIC(10,6),
-                                Volume int,
-                                CloseUSDCourse NUMERIC(10,9)
+                                OpenCourse NUMERIC(20,6),
+                                HighCourse NUMERIC(20,6),
+                                LowCourse NUMERIC(20,6),
+                                CloseCourse NUMERIC(20,6),
+                                Adj_CloseCourse NUMERIC(20,6),
+                                Volume bigint,
+                                CloseUSDCourse NUMERIC(20,9)
                                 )""")		
 
                     self.cursor.execute(sql_create_table)
