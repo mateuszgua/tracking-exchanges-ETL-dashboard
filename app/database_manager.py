@@ -58,7 +58,8 @@ class DatabaseManager:
                     sql_create_table = (
                         f"""IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[indexData]') AND type in (N'U'))
                         CREATE TABLE indexData (
-                                Id varchar(10) NOT NULL,
+                                Id int NOT NULL,
+                                IndexText varchar(10) NOT NULL,
                                 Date date NOT NULL,
                                 OpenCourse NUMERIC(10,6),
                                 HighCourse NUMERIC(10,6),
@@ -73,9 +74,10 @@ class DatabaseManager:
                     sql_create_table = (
                         f"""IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[indexInfo]') AND type in (N'U'))
                         CREATE TABLE indexInfo (
+                                Id int NOT NULL,
                                 Region varchar(20),
                                 Exchange varchar(70),
-                                Id varchar(15),
+                                IndexText varchar(15),
                                 Currency varchar(10)
                                 )""")
                     self.cursor.execute(sql_create_table)
@@ -84,7 +86,8 @@ class DatabaseManager:
                     sql_create_table = (
                         f"""IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[indexProcessed]') AND type in (N'U'))
                         CREATE TABLE indexProcessed (
-                                Id varchar(10) NOT NULL,
+                                Id int NOT NULL,
+                                IndexText varchar(10) NOT NULL,
                                 Date date NOT NULL,
                                 OpenCourse NUMERIC(10,6),
                                 HighCourse NUMERIC(10,6),
@@ -92,7 +95,7 @@ class DatabaseManager:
                                 CloseCourse NUMERIC(10,6),
                                 Adj_CloseCourse NUMERIC(10,6),
                                 Volume int,
-                                CloseUSDCourse NUMERIC(10,8)
+                                CloseUSDCourse NUMERIC(10,9)
                                 )""")		
 
                     self.cursor.execute(sql_create_table)
