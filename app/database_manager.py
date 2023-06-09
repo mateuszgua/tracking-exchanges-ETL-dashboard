@@ -60,7 +60,7 @@ class DatabaseManager:
                         CREATE TABLE indexData (
                                 Id int NOT NULL,
                                 IndexText varchar(10) NOT NULL,
-                                Date date NOT NULL,
+                                DateExch date NOT NULL,
                                 OpenCourse NUMERIC(20,6),
                                 HighCourse NUMERIC(20,6),
                                 LowCourse NUMERIC(20,6),
@@ -88,7 +88,7 @@ class DatabaseManager:
                         CREATE TABLE indexProcessed (
                                 Id int NOT NULL,
                                 IndexText varchar(10) NOT NULL,
-                                Date date NOT NULL,
+                                DateExch date NOT NULL,
                                 OpenCourse NUMERIC(20,6),
                                 HighCourse NUMERIC(20,6),
                                 LowCourse NUMERIC(20,6),
