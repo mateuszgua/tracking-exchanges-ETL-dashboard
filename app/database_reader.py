@@ -22,4 +22,15 @@ class DatabaseReader:
         except pyodbc.Error as e:
             print(f"There is a problem with read data: {e}")
         else:
+            self.db.close_connection()
             return empty_table
+
+    def sql_get_all(self, sql_execute):
+        try:
+            self.cursor.execute(sql_execute)
+            result = self.cursor.fetchall()
+        except pyodbc.Error as e:
+            print(f"There is a problem with read data: {e}")
+        else:
+            self.db.close_connection()
+            return result
