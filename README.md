@@ -19,11 +19,17 @@
 
 ## Technologies Used
 - Python - version 3.10.6
+- Pandas - version 1.5.3
 
 ## Features
 List the ready features here:
 - Creating s3 bucket in AWS,
 - Creating S3 bucket connection with app,
+- Creating Pandas dataframe with data from s3 bucket,
+- Creating database instance Microsoft SQL Server in AWS RDS,
+- Creating connection with AWS SQL Server from api,
+- Creating database and tables from api with Python,
+- Loading data to database and check database in Azure Data Studio,
 
 ## Screenshots
 ![Example screenshot](/app/static/func-diagram.png)
