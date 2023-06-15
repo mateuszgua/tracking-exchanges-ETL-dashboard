@@ -1,4 +1,3 @@
-import pandas as pd
 import pyodbc
 
 from get_pandas_df import get_pandas_df
@@ -6,7 +5,8 @@ from config import Config
 from database_manager import DatabaseManager
 from database_load_data import FillTables
 from database_reader import DatabaseReader
-
+from get_pandas_df_from_sql import get_dataframe_from_sql
+from helpers import get_files_list_from_directory
 
 db_manager = DatabaseManager()
 
@@ -40,24 +40,20 @@ try:
 except Exception as e:
     print(f"Error in main program with: {e}")
 
-def get_dataframe_from_sql(sql_file_path):
-    try:
-        # db_manager = MyDatabase()
-        sql_file = open(sql_file_path)
-        sql_as_string = sql_file.read()
-        result = db_reader.sql_get_all(sql_as_string)
-        result_df = pd.DataFrame(result)
-    except pyodbc.Error as e:
-        print(e)
-        return f"Error: {e}"
-    finally:
-        sql_file.close()
-        return result_df
+
     
 try:
     sql_file_task1 = "app/sql_files/task_1.sql"
-    df_task1 = get_dataframe_from_sql(sql_file_task1)
-    print(df_task1)
+    sql_file_task2 = "app/sql_files/task_2.sql"
+    sql_file_task3 = "app/sql_files/task_3.sql"
+    
+    dir_path = r'app/sql_files/'
+    files_list = get_files_list_from_directory(dir_path)
+
+    for file in files_list:
+        sql_file_path = f"{dir_path}{file}"
+        df_task = get_dataframe_from_sql(sql_file_path)
+        print(df_task)
 except pyodbc.Error as e:
-    print(e)
+    print(f"Error with creating df from sql file: {e} desc:{e}")
 
