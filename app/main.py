@@ -1,8 +1,13 @@
+import pyodbc
+
 from get_pandas_df import get_pandas_df
 from config import Config
 from database_manager import DatabaseManager
 from database_load_data import FillTables
 from database_reader import DatabaseReader
+from get_pandas_df_from_sql import get_dataframe_from_sql
+from helpers import get_files_list_from_directory
+
 db_manager = DatabaseManager()
 
 tables_names = ['indexData', 'indexInfo', 'indexProcessed']
@@ -33,4 +38,22 @@ try:
         else:
                 print(f"Table: {table_name} have data")
 except Exception as e:
-        print(f"Error in main program with: {e}")
+    print(f"Error in main program with: {e}")
+
+
+    
+try:
+    sql_file_task1 = "app/sql_files/task_1.sql"
+    sql_file_task2 = "app/sql_files/task_2.sql"
+    sql_file_task3 = "app/sql_files/task_3.sql"
+    
+    dir_path = r'app/sql_files/'
+    files_list = get_files_list_from_directory(dir_path)
+
+    for file in files_list:
+        sql_file_path = f"{dir_path}{file}"
+        df_task = get_dataframe_from_sql(sql_file_path)
+        print(df_task)
+except pyodbc.Error as e:
+    print(f"Error with creating df from sql file: {e} desc:{e}")
+
