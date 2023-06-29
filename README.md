@@ -20,6 +20,7 @@
 ## Technologies Used
 - Python - version 3.10.6
 - Pandas - version 1.5.3
+- Microsoft Power BI Desktop - 2.117.984.0 64-bit (May 2023)
 
 ## Features
 List the ready features here:
@@ -30,6 +31,9 @@ List the ready features here:
 - Creating connection with AWS SQL Server from api,
 - Creating database and tables from api with Python,
 - Loading data to database and check database in Azure Data Studio,
+- Making connection from Power BI to database,
+- Loading data with Power Query,
+- Making dashboard in Power Bi
 
 ## Screenshots
 ![Example screenshot](/app/static/func-diagram.png)
