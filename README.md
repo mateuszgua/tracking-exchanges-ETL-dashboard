@@ -1,5 +1,6 @@
 # Tracking Exchanges Data ETL Process and Dashboard
 > This application shows the process of data flow from the source to visualizations. 
+> Power BI dashboard 📊 [_here_](https://app.powerbi.com/view?r=eyJrIjoiMWJkYWRjYWQtMDI0MC00ZTFlLTgzZjEtMzQ5NGQ2YmEzZGRlIiwidCI6Ijc1NGU2OGMyLWM4NTctNDUzMC05MmMxLTRlNDQ3MWRjMDEyNCIsImMiOjl9&pageName=ReportSection0a83adde728b26ebd440).
 
 
 ## Table of Contents
@@ -20,6 +21,7 @@
 ## Technologies Used
 - Python - version 3.10.6
 - Pandas - version 1.5.3
+- Microsoft Power BI Desktop - 2.117.984.0 64-bit (May 2023)
 
 ## Features
 List the ready features here:
@@ -30,6 +32,9 @@ List the ready features here:
 - Creating connection with AWS SQL Server from api,
 - Creating database and tables from api with Python,
 - Loading data to database and check database in Azure Data Studio,
+- Making connection from Power BI to database,
+- Loading data with Power Query,
+- Making dashboard in Power Bi 📊 [_here_](https://app.powerbi.com/view?r=eyJrIjoiMWJkYWRjYWQtMDI0MC00ZTFlLTgzZjEtMzQ5NGQ2YmEzZGRlIiwidCI6Ijc1NGU2OGMyLWM4NTctNDUzMC05MmMxLTRlNDQ3MWRjMDEyNCIsImMiOjl9&pageName=ReportSection0a83adde728b26ebd440)
 
 ## Screenshots
 ![Example screenshot](/app/static/func-diagram.png)
