@@ -34,7 +34,8 @@ List the ready features here:
 - Loading data to database and check database in Azure Data Studio,
 - Making connection from Power BI to database,
 - Loading data with Power Query,
-- Making dashboard in Power Bi 📊 [_here_](https://app.powerbi.com/view?r=eyJrIjoiMWJkYWRjYWQtMDI0MC00ZTFlLTgzZjEtMzQ5NGQ2YmEzZGRlIiwidCI6Ijc1NGU2OGMyLWM4NTctNDUzMC05MmMxLTRlNDQ3MWRjMDEyNCIsImMiOjl9&pageName=ReportSection0a83adde728b26ebd440)
+- Making dashboard in Power Bi 📊 [_here_](https://app.powerbi.com/view?r=eyJrIjoiMWJkYWRjYWQtMDI0MC00ZTFlLTgzZjEtMzQ5NGQ2YmEzZGRlIiwidCI6Ijc1NGU2OGMyLWM4NTctNDUzMC05MmMxLTRlNDQ3MWRjMDEyNCIsImMiOjl9&pageName=ReportSection0a83adde728b26ebd440),
+- add dockerfile in project.
 
 ## Screenshots
 ![Example screenshot](/app/static/func-diagram.png)
