@@ -1,21 +1,20 @@
 import pyodbc
 
-from get_pandas_df import get_pandas_df
-from config import Config
-from database_manager import DatabaseManager
-from database_load_data import FillTables
-from database_reader import DatabaseReader
-from get_pandas_df_from_sql import get_dataframe_from_sql
-from helpers import get_files_list_from_directory
+from app.get_pandas_df import get_pandas_df
+from app.config import Config
+from app.database_manager import DatabaseManager
+from app.database_load_data import FillTables
+from app.database_reader import DatabaseReader
+from app.get_pandas_df_from_sql import get_dataframe_from_sql
+from app.helpers import get_files_list_from_directory
 
 db_manager = DatabaseManager()
 
 tables_names = ['indexData', 'indexInfo', 'indexProcessed']
 
 try:            
-
     db_manager.is_database_exist()
-
+    
     for table_name in tables_names:
         db_manager.is_table_exist(table_name)
     
@@ -26,13 +25,19 @@ try:
         
         if table_is_empty is True:
             load_data = FillTables()
-            match table_name:
-                case "indexData":
-                    file_path = Config.FILE_PATH_INDEX_DATA
-                case "indexInfo":
-                    file_path = Config.FILE_PATH_INDEX_INFO
-                case "indexProcessed":
-                    file_path = Config.FILE_PATH_INDEX_PROCESSED
+            if table_name == "indexData":
+                file_path = Config.FILE_PATH_INDEX_DATA
+            elif table_name == "indexInfo":
+                file_path = Config.FILE_PATH_INDEX_INFO
+            elif table_name == "indexProcessed":
+                file_path = Config.FILE_PATH_INDEX_PROCESSED
+            # match table_name:
+            #     case "indexData":
+            #         file_path = Config.FILE_PATH_INDEX_DATA
+            #     case "indexInfo":
+            #         file_path = Config.FILE_PATH_INDEX_INFO
+            #     case "indexProcessed":
+            #         file_path = Config.FILE_PATH_INDEX_PROCESSED
             dataframe = get_pandas_df(file_path)
             load_data.fill_table(table_name, dataframe)
         else:
